@@ -40,14 +40,6 @@
         url: http://getcomposer.org/composer.phar
         dest: /home/isucon/webapp/php/composer.phar
         mode: 0755
-    - name: php
-      shell: PATH=/home/isucon/.local/php/bin:$PATH php composer.phar install
-      args:
-        chdir: /home/isucon/webapp/php
-    - name: php-fpm (isuda)
-      copy: src=../files/isuda.php-fpm.conf  dest=/home/isucon/.local/php/etc/isuda.php-fpm.conf  owner=isucon group=isucon mode=644
-    - name: php-fpm (isutar)
-      copy: src=../files/isutar.php-fpm.conf dest=/home/isucon/.local/php/etc/isutar.php-fpm.conf owner=isucon group=isucon mode=644
 
 - hosts: all
   gather_facts: no
